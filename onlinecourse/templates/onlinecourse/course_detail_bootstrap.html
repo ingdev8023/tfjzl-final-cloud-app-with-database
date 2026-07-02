@@ -60,7 +60,9 @@
             {% for question in course.question_set.all %}
                 <!-- Question UI components will go here -->
                  <div class="card mt-1">
-        <div class="card-header"><h5>{{ question.content }}</h5></div>
+        <div class="card-header">
+            <h5>{{ question.content }}</h5>
+        </div>
         {% csrf_token %}
         <div class="form-group">
             <!-- Choices components go here -->
@@ -78,6 +80,7 @@
     </div>
 
             {% endfor %}
+            <input class="btn btn-success btn-block" type="submit" value="Submit">
         </form>
     </div>
 
