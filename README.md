@@ -1,15 +1,96 @@
+# Django Online Course App with Database
 
-**General Notes**
+Final project for the IBM/Coursera course **Django Application Development with SQL and Databases**.
 
-An `onlinecourse` app has already been provided in this repo upon which you will be adding a new assesement feature.
+This project is a Django web application for an online course platform. It includes course listings, user registration and authentication, course enrollment, lessons, exam questions, answer choices, submissions, and exam result calculation.
 
-- If you want to develop the final project on Theia hosted by [IBM Developer Skills Network](https://labs.cognitiveclass.ai/), you will need to create the same project structure on Theia workspace and save it everytime you close the browser
-- Or you could develop the final project locally by setting up your own Python runtime and IDE
-- Hints for the final project are left on source code files
-- You may choose any cloud platform for deployment (default is IBM Cloud Foundry)
-- Depends on your deployment, you may choose any SQL database Django supported such as SQLite3, PostgreSQL, and MySQL (default is SQLite3)
+## Project Overview
 
-**ER Diagram**
-For your reference, we have prepared the ER diagram design for the new assesement feature.
+The application provides a basic online learning platform where users can:
 
-![Onlinecourse ER Diagram](https://github.com/ibm-developer-skills-network/final-cloud-app-with-database/blob/master/static/media/course_images/onlinecourse_app_er.png)
+- Register and log in
+- View available courses
+- Enroll in a course
+- Access course lessons
+- Submit answers to course assessment questions
+- View exam results after submission
+
+The final project extends the provided `onlinecourse` Django app by adding an assessment feature connected to the database.
+
+## Tech Stack
+
+- Python
+- Django
+- SQLite
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Git / GitHub
+
+## Main Features
+
+### User Authentication
+
+Users can register, log in, and log out using Django's built-in authentication system.
+
+### Course Management
+
+The app includes course, lesson, instructor, learner, and enrollment models. Courses can contain multiple lessons and can be associated with multiple instructors.
+
+### Enrollment System
+
+Authenticated users can enroll in available courses. Each enrollment connects a user with a course and stores enrollment-related data.
+
+### Assessment Feature
+
+The assessment feature allows courses to include questions and multiple answer choices.
+
+The main assessment models are:
+
+- `Question`
+- `Choice`
+- `Submission`
+
+A learner can submit selected choices for a course assessment, and the app calculates the final score based on correct answers.
+
+### Exam Result Calculation
+
+After submitting an exam, the application compares the learner's selected choices with the correct choices for each question and calculates the final grade.
+
+## Database Models
+
+The project includes the following main models:
+
+- `Instructor`
+- `Learner`
+- `Course`
+- `Lesson`
+- `Enrollment`
+- `Question`
+- `Choice`
+- `Submission`
+
+These models define the relationship between users, courses, lessons, enrollments, and assessments.
+
+## Project Structure
+
+```text
+.
+├── manage.py
+├── myproject/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── onlinecourse/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── migrations/
+│   └── templates/
+├── static/
+├── requirements.txt
+├── Procfile
+├── manifest.yml
+└── runtime.txt
